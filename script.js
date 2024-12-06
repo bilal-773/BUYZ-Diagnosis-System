@@ -1,6 +1,8 @@
 const problemNames = [
     "Diabetes (Type 2)", "Hypertension", "Heart Disease", "Alzheimer's Disease",
-    "Cancer", "Asthma", "Chronic Kidney Disease", "Tuberculosis", "Hepatitis B", "Stroke"
+    "Cancer", "Asthma", "Chronic Kidney Disease", "Tuberculosis", "Hepatitis B", 
+    "Stroke", "Influenza (Flu)", "Arthritis (Rheumatoid)", "Migraine", 
+    "Pneumonia", "Allergies"
 ];
 
 const symptoms = [
@@ -29,7 +31,17 @@ const symptoms = [
      "Pale stools", "Joint pain", "Stomach discomfort", "Jaundice"],
     ["Sudden weakness in limbs", "Numbness on one side", "Slurred speech", "Dizziness", 
      "Severe headache", "Loss of balance", "Confusion", "Difficulty understanding speech", 
-     "Sudden difficulty walking", "Increased thirst"]
+     "Sudden difficulty walking"],
+    ["Fever", "Chills", "Muscle aches", "Fatigue", "Cough", "Sore throat", 
+     "Runny or stuffy nose", "Headache", "Shortness of breath", "Nausea or vomiting"],
+    ["Joint pain", "Swelling in joints", "Stiffness (especially in the morning)", "Fatigue", "Loss of appetite", 
+     "Low-grade fever", "Reduced range of motion", "Warmth around affected joints", "Nodules under the skin", "General weakness"],
+    ["Intense headache", "Nausea", "Vomiting", "Sensitivity to light", "Sensitivity to sound", 
+     "Blurred vision", "Fatigue", "Dizziness", "Difficulty concentrating", "Aura (visual disturbances like flashing lights)"],
+    ["Cough (may produce mucus)", "Fever", "Chills", "Difficulty breathing", "Chest pain", 
+     "Fatigue", "Loss of appetite", "Nausea", "Rapid heartbeat", "Confusion"],
+    ["Sneezing", "Runny or stuffy nose", "Watery eyes", "Itchy nose or throat", "Cough", 
+     "Fatigue", "Skin rashes", "Swelling", "Wheezing", "Hives"]
 ];
 
 const symptomsContainer = document.getElementById("symptoms-container");
