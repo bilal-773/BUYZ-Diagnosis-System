@@ -381,3 +381,145 @@ footer p {
         transform: translateY(0);
     }
 }
+/* General container styling */
+#result-container {
+    margin-top: 20px; /* Reduced margin at the top */
+    padding: 20px; /* Reduced padding */
+    border-radius: 18px; /* Slightly smaller border radius */
+    background: linear-gradient(145deg, #343434, #222222); /* Dark, sophisticated gradient */
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.1); /* Softer shadow */
+    text-align: center;
+    animation: fade-in 1.5s ease-in-out;
+    border: 2px solid #FFD700;
+    position: relative;
+    transform: translateY(8px); /* Slight lift for 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover effect for 3D lift */
+#result-container:hover {
+    transform: translateY(0); /* Lift effect on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+}
+
+/* Text Styling */
+#result-text {
+    font-size: 1.6em; /* Smaller font size */
+    font-weight: bold;
+    color: #FFD700;
+    letter-spacing: 1.2px; /* Reduced letter-spacing */
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 4px 4px 15px rgba(255, 215, 0, 0.8), 0px 0px 30px rgba(255, 255, 255, 0.6);
+    animation: glow-pulse 2s infinite alternate;
+}
+
+/* Glow Pulse Animation */
+@keyframes glow-pulse {
+    from {
+        text-shadow: 4px 4px 15px rgba(255, 215, 0, 0.8), 0px 0px 30px rgba(255, 255, 255, 0.6);
+    }
+    to {
+        text-shadow: 5px 5px 20px rgba(255, 215, 0, 1), 0px 0px 40px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Styling individual sections (Diagnosis, Treatment, Tablets) */
+#result-text span {
+    display: block;
+    background: linear-gradient(145deg, #2c2c2c, #1f1f1f); /* Dark gradient for the sections */
+    padding: 18px; /* Reduced padding */
+    margin-bottom: 20px; /* Slightly reduced margin */
+    border-radius: 15px;
+    border: 1px solid #444; /* Light border for depth */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    line-height: 1.5; /* Reduced line-height */
+    color: #f2f2f2;
+    font-size: 1.05em; /* Smaller font size for text */
+    font-family: 'Roboto', sans-serif;
+    background-color: #272727; /* Smooth, dark background */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Soft shadow for text */
+}
+
+/* Hover effect for the individual sections */
+#result-text span:hover {
+    transform: scale(1.03); /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+}
+
+/* Bold headings */
+#result-text strong {
+    display: block;
+    margin-bottom: 10px; /* Reduced space below heading */
+    font-size: 18px; /* Slightly smaller heading size */
+    font-weight: 700;
+    color: #4CAF50; /* Green accent for headings */
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Button container */
+#buttons-container {
+    margin-top: 20px; /* Reduced margin */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Reduced gap */
+}
+
+#buttons-container button {
+    padding: 12px 30px; /* Smaller padding */
+    font-size: 1.1em; /* Smaller font size */
+    font-weight: bold;
+    color: #FFF;
+    background: linear-gradient(145deg, #ff5722, #ff3d00); /* Rich orange gradient */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button hover effect */
+#buttons-container button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: all 0.3s ease-in-out;
+}
+
+#buttons-container button:hover::after {
+    left: 100%;
+}
+
+#buttons-container button:hover {
+    transform: translateY(-4px); /* Slight lift on hover */
+    background: linear-gradient(145deg, #ff7043, #ff5722);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15), inset 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+#buttons-container button:active {
+    transform: translateY(2px); /* Slight press effect on click */
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #result-container {
+        padding: 15px; /* Smaller padding */
+    }
+    #result-text {
+        font-size: 1.4em; /* Slightly smaller font size for mobile */
+    }
+    #buttons-container button {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+}
