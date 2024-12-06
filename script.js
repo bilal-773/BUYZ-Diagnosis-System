@@ -1,7 +1,7 @@
 const problemNames = [
     "Diabetes (Type 2)", "Hypertension", "Heart Disease", "Alzheimer's Disease",
     "Cancer", "Asthma", "Chronic Kidney Disease", "Tuberculosis", "Hepatitis B", 
-    "Stroke", "Influenza (Flu)", "Arthritis (Rheumatoid)", "Migraine", 
+    "Stroke", "Influenza (Flu)", "Rheumatoid Arthritis", "Migraine", 
     "Pneumonia", "Allergies"
 ];
 
@@ -44,6 +44,42 @@ const symptoms = [
      "Fatigue", "Skin rashes", "Swelling", "Wheezing", "Hives"]
 ];
 
+const treatments = [
+    "Lifestyle changes (diet, exercise, weight loss), Insulin therapy, Oral hypoglycemic drugs.",
+    "Reduced salt intake, healthy diet, Regular physical activity, Antihypertensive medications.",
+    "Lifestyle modifications, Medications to control cholesterol and blood pressure, Surgery (e.g., bypass).",
+    "Cognitive therapy and supportive care, Medications to slow progression, Regular mental stimulation.",
+    "Surgery, chemotherapy, immunotherapy, radiation therapy, targeted therapy.",
+    "Avoid allergens and triggers, Use of inhalers, Long-term corticosteroids for severe cases.",
+    "Control blood pressure and blood sugar, Dietary management, Dialysis in severe cases.",
+    "Long-term antibiotic therapy, Combination drug therapy, Vaccination (BCG).",
+    "Antiviral medications for chronic cases, Supportive care for acute infection, Regular monitoring of liver function.",
+    "Emergency thrombolysis for ischemic stroke, Physiotherapy for rehabilitation, Control of risk factors.",
+    "Antiviral medications for severe cases, Symptomatic treatment (rest, hydration), Annual flu vaccination.",
+    "Physical therapy and joint exercises, Immunosuppressive drugs, Pain management.",
+    "Avoidance of triggers, Pain relief and anti-nausea drugs, Preventive medications for frequent attacks.",
+    "Antibiotics for bacterial cases, Supportive care (hydration, oxygen therapy), Vaccination for prevention (PCV).",
+    "Avoid allergens, Use of antihistamines, Immunotherapy for long-term relief."
+];
+
+const tablets = [
+    "Metformin (Glucophage), Sulfonylureas (Glibenclamide), DPP-4 Inhibitors (Sitagliptin).",
+    "Losartan (Cozaar), Amlodipine (Norvasc), Hydrochlorothiazide (Esidrix).",
+    "Atorvastatin (Lipitor), Aspirin (Ecosprin), Beta-blockers (Metoprolol).",
+    "Donepezil (Aricept), Memantine (Ebixa), Rivastigmine (Exelon).",
+    "Imatinib (Glivec - leukemia), Tamoxifen (Nolvadex - breast cancer), Capecitabine (Xeloda - colorectal cancer).",
+    "Montelukast (Singulair), Theophylline (Uniphyllin), Prednisolone (short-term corticosteroid).",
+    "Sevelamer (Renvela), Calcium Acetate (Phoslo), Erythropoietin (Recormon - anemia).",
+    "Isoniazid (INH), Rifampin (Rimactane), Ethambutol (Myambutol).",
+    "Tenofovir (Viread), Entecavir (Baraclude), Lamivudine (Zeffix).",
+    "Clopidogrel (Plavix), Aspirin (low-dose), Atorvastatin (Lipitor).",
+    "Oseltamivir (Tamiflu), Paracetamol (Panadol), Antihistamines (Loratadine).",
+    "Methotrexate (Trexall), Sulfasalazine (Salazopyrin), Ibuprofen (Brufen).",
+    "Sumatriptan (Imigran), Propranolol (Inderal), Naproxen (Synflex).",
+    "Azithromycin (Zithromax), Levofloxacin (Levaquin), Amoxicillin/Clavulanate (Augmentin).",
+    "Loratadine (Claritin), Cetirizine (Zyrtec), Montelukast (Singulair)."
+];
+
 const symptomsContainer = document.getElementById("symptoms-container");
 const resultText = document.getElementById("result-text");
 const analyzeButton = document.getElementById("analyze-button");
@@ -77,10 +113,15 @@ analyzeButton.addEventListener("click", () => {
     });
 
     if (maxMatches > 0) {
-        resultText.innerText = `Based on your symptoms, the most likely problem is: ${problemNames[bestMatchIndex]} (${maxMatches} matches).`;
+        resultText.innerHTML = `
+            <span><strong>Diagnosis:</strong> ${problemNames[bestMatchIndex]} (${maxMatches} matches).</span>
+            <span><strong>Treatment:</strong> ${treatments[bestMatchIndex]}</span>
+            <span><strong>Tablets:</strong> ${tablets[bestMatchIndex]}</span>
+        `;
     } else {
         resultText.innerText = "No specific problem was detected based on your symptoms.";
     }
+    
 });
 
 // Reset symptoms and result
