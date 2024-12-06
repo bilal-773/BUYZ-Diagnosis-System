@@ -332,3 +332,52 @@ footer p {
         padding: 30px;
     }
 }
+
+/* Styling for Muhammad Bilal */
+.creator-name {
+    font-size: 2em; /* Larger text for emphasis */
+    font-weight: 700;
+    color: #FFD700; /* Gold color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.7); /* Text shadow for emphasis */
+    animation: fade-in 2s ease-in-out;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+/* Styling for Fast University */
+.university-name {
+    font-size: 1.4em;
+    color: #999; /* Lighter shade for contrast */
+    font-style: italic;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5); /* Soft text shadow */
+    animation: slide-down 2s ease-out;
+    font-family: 'Arial', sans-serif; /* Simple and elegant font */
+}
+
+/* Enhanced fade-in animation */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced slide-down animation */
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
